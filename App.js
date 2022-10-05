@@ -5,6 +5,7 @@ import SignUp from './screens/SignUp'
 import Splash from './screens/Splash'
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import MenuTab from './screens/MenuTab'
 //import { createDrawerNavigator } from '@react-navigation/drawer';
 
 // import HomeScreen from './screens/HomeScreen';
@@ -27,6 +28,7 @@ export default function App() {
     <NavigationContainer>
       <RootStack.Navigator headerMode='none'>
         <RootStack.Screen name="Home" component={Splash} />
+        <RootStack.Screen name="HomeScreen" component={MenuTab} />
         <RootStack.Screen name="Login" component={Login} />
         <RootStack.Screen name="SignUp" component={SignUp} />
       </RootStack.Navigator>

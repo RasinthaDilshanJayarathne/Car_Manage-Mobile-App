@@ -206,6 +206,7 @@ return (
         <View style={styles.button}>
             <TouchableOpacity
                 style={styles.signIn}
+                onPress={() => navigation.navigate('HomeScreen')}
                 //onPress={() => {loginHandle( data.username, data.password )}}
             >
             <LinearGradient
