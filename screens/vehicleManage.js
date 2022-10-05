@@ -9,7 +9,7 @@ import {
     Image
   } from 'react-native';
 
-export default function MenuProfile({navigation}) {
+export default function vehicleManage({navigation}) {
   return (
     <View>
         <Text>Hello profile</Text>

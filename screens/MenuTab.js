@@ -2,13 +2,10 @@ import React from 'react';
 import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import Login from './Login';
-import SignUp from './SignUp';
-import Splash from './Splash';
+//import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MenuHome from './MenuHome';
-import MenuProfile from './MenuProfile';
+import vehicleManage from './vehicleManage';
 import MenuSettings from './MenuSettings';
-import MenuNotification from './MenuNotification';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -22,7 +19,7 @@ const MenuTab = ({ navigation }) => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      activeColor="#e91e63"
+      activeColor="white"
       barStyle={{ backgroundColor: '#379cc6' }}
     >
       <Tab.Screen
@@ -37,7 +34,7 @@ const MenuTab = ({ navigation }) => {
       />
       <Tab.Screen
         name="Profile"
-        component={MenuProfile}
+        component={MenuSettings}
         options={{
           tabBarLabel: 'Profile',
           // tabBarIcon: ({ color }) => (
@@ -56,10 +53,10 @@ const MenuTab = ({ navigation }) => {
         }}
       /> */}
       <Tab.Screen
-        name="Settings"
-        component={MenuSettings}
+        name="vehicleManage"
+        component={vehicleManage}
         options={{
-          tabBarLabel: 'Settings',
+          tabBarLabel: 'Add',
           // tabBarIcon: ({ color }) => (
           //   <MaterialCommunityIcons name="account" color={color} size={26} />
           // ),
