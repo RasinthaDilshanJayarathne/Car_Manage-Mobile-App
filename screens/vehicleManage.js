@@ -94,34 +94,6 @@ export default function vehicleManage({ navigation }) {
     }
   }
 
-  const handlePasswordChange = (val) => {
-    setData({
-      ...data,
-      password: val
-    });
-  }
-
-  const handleConfirmPasswordChange = (val) => {
-    setData({
-      ...data,
-      confirm_password: val
-    });
-  }
-
-  const updateSecureTextEntry = () => {
-    setData({
-      ...data,
-      secureTextEntry: !data.secureTextEntry
-    });
-  }
-
-  const updateConfirmSecureTextEntry = () => {
-    setData({
-      ...data,
-      confirm_secureTextEntry: !data.confirm_secureTextEntry
-    });
-  }
-
   return (
     <View style={{ flex: 1 }}>
       {renderHeader()}
@@ -129,12 +101,35 @@ export default function vehicleManage({ navigation }) {
         <Text style={{ fontFamily: "Roboto-Black", fontSize: 30, lineHeight: 36 }}>Manage</Text>
         <Text style={{ fontFamily: "Roboto-Black", fontSize: 30, lineHeight: 36 }}>All Vehicles</Text>
       </View>
+      <View style={styles.addImage}></View>
+      <View style={{ flexDirection: 'row', marginTop: 50 }}>
+        <TextInput style={styles.input} placeholder="Register No" />
+        <TextInput style={styles.input} placeholder="Brand" />
+      </View>
+      <View style={{ flexDirection: 'row', marginTop: 10 }}>
+        <TextInput style={styles.input} placeholder="Price" />
+        <TextInput style={styles.input} placeholder="Fuel Type" />
+      </View>
+      <View style={{ flexDirection: 'row', marginTop: 10 }}>
+        <TextInput style={styles.input} placeholder="Date" />
+        <TextInput style={styles.input} placeholder="Location" />
+      </View>
       <View>
-        <View style={styles.addImage}></View>
+        <TouchableOpacity
+          //onPress={() => navigation.goBack()}
+          style={{
+            width: '60%',
+            backgroundColor: 'green',
+            height:50,
+            marginTop:40,
+            borderRadius:15,
+            marginLeft:70
+          }}
+        >
+          <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20,textAlign:'center',marginTop:10}}>Save</Text>
+        </TouchableOpacity>
       </View>
-      <View style={{ flex: 1 }}>
 
-      </View>
     </View>
   )
 }
@@ -142,7 +137,7 @@ export default function vehicleManage({ navigation }) {
 const styles = StyleSheet.create({
   addImage: {
     width: '50%',
-    height: '40%',
+    height: '20%',
     backgroundColor: 'gray',
     marginLeft: 100,
     borderRadius: 15
@@ -153,6 +148,17 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     color: '#05375a',
     height: 30
+  },
+  textSign: {
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  signIn: {
+    width: '100%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10
   },
   text_footer: {
     color: '#05375a',
@@ -180,4 +186,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold'
   },
+  input: {
+    borderWidth: 1,
+    marginLeft: 23,
+    width: '40%',
+    height: '8%',
+    borderRadius: 10,
+    color: '#05375a',
+  },
+
 })
