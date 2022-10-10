@@ -14,6 +14,25 @@ import LinearGradient from 'react-native-linear-gradient';
 
 export default function vehicleManage({ navigation }) {
 
+  const saveData = () => {
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+          Reg_Number: Reg_Number,
+          Brand: Brand,
+          Fuel_Type: Fuel_Type,
+          Date:Date,
+          Price:Price,
+          Location:Location
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    })
+        .then((response) => { Alert.alert("Save Saved Successfully !") })
+        .catch((err) => { Alert.alert("Error occured !") })
+}
+
   function renderHeader() {
     return (
       <View style={{ flexDirection: 'row', height: 50 }}>
@@ -133,6 +152,7 @@ export default function vehicleManage({ navigation }) {
     </View>
   )
 }
+
 
 const styles = StyleSheet.create({
   addImage: {
