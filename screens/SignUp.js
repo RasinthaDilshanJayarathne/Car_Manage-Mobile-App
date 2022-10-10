@@ -69,6 +69,22 @@ export default function SignUp({ navigation }) {
         });
     }
 
+    const saveData = () => {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: username,
+                password: password,
+                email: email,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => { Alert.alert("Save Saved Successfully !") })
+            .catch((err) => { Alert.alert("Error occured !") })
+    }
+
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor='#379cc6' barStyle="light-content" />
@@ -142,7 +158,7 @@ export default function SignUp({ navigation }) {
                     </View>
 
                     <Text style={[styles.text_footer, {
-                         marginTop: 35
+                        marginTop: 35
                     }]}>Confirm Password</Text>
                     <View style={styles.action}>
                         {/* <Feather 
@@ -193,13 +209,13 @@ export default function SignUp({ navigation }) {
                                 style={styles.signIn}
                             >
                                 <Text style={[styles.textSign, {
-                                    color:'#fff'
+                                    color: '#fff'
                                 }]}>Sign Up</Text>
                             </LinearGradient>
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                            onPress={() => navigation.goBack()}
+                            onPress={() =>{navigation.goBack()}}
                             style={[styles.signIn, {
                                 borderColor: '#379cc6',
                                 borderWidth: 1,
